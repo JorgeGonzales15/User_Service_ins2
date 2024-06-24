@@ -163,7 +163,7 @@ public class CompanyServiceImpl implements ICompanyService {
 
     public int calculateAverageRating(Long companyId) {
         try {
-            String url = "https://business-service-v4.azurewebsites.net/api/v1/ratings/company/" + companyId;
+            String url = "https://bussiness-service-2.azurewebsites.net/api/v1/ratings/company/" + companyId;
 
             List<Map<String, Object>> ratings = restTemplate.getForObject(url, List.class);
 
@@ -182,7 +182,7 @@ public class CompanyServiceImpl implements ICompanyService {
     }
 
     public List<Long> getServiceIds() {
-        String url = "https://business-service-v4.azurewebsites.net/api/v1/services";
+        String url = "https://bussiness-service-2.azurewebsites.net/api/v1/services";
         List<Long> serviceIds = new ArrayList<>();
 
         try {
@@ -202,7 +202,7 @@ public class CompanyServiceImpl implements ICompanyService {
     }
 
     public List<String> getNamesOfServicesByIdList(List<Long> serviceIds) {
-        String url = "https://business-service-v4.azurewebsites.net/api/v1/services/";
+        String url = "https://bussiness-service-2.azurewebsites.net/api/v1/services/";
         List<String> stringIds = serviceIds.stream()
                 .map(String::valueOf)
                 .collect(Collectors.toList());
